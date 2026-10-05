@@ -28,6 +28,7 @@ class GoalTracker(QMainWindow):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         main_layout = QVBoxLayout(central_widget)
+
         # search
         search_layout = QHBoxLayout()
         self.search = QLineEdit()
@@ -45,6 +46,7 @@ class GoalTracker(QMainWindow):
         self.table.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)
         self.table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
         main_layout.addWidget(self.table)
+
         #buttons
         button_layout = QHBoxLayout()
         self.button_create = QPushButton("Create Goal")
@@ -81,7 +83,7 @@ class GoalTracker(QMainWindow):
             total_distance = int(goal["days"]) * float(goal["distance"])
             self.table.setItem(row_id, 3, QTableWidgetItem(str(total_distance)))
 
-    #create
+    #create goal
     def create_goal(self):
         create = CreateGoal(self)
         if create.exec():
@@ -89,7 +91,7 @@ class GoalTracker(QMainWindow):
             self.db.save_goal(data["title"], data["days"], data["distance"])
             self.refresh_table()
 
-    #update
+    #update goal
     def edit_goal(self):
         selected_row = self.table.currentRow()
         if selected_row < 0 or selected_row >= len(self.goals):
@@ -104,7 +106,7 @@ class GoalTracker(QMainWindow):
             self.db.update_goal(old_goal_data["title"], new_data["title"], new_data["days"], new_data["distance"])
             self.refresh_table()
 
-    #delete
+    #delete goal
     def delete_goal(self):
         selected_row = self.table.currentRow()
         if selected_row < 0 or selected_row >= len(self.goals):
@@ -123,7 +125,8 @@ class GoalTracker(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    #dark_theme
+
+    #initializing the colors of the dark theme
     app.setStyle("Fusion")
     dark_theme = QPalette()
     dark_background = QColor("#222429")
@@ -133,6 +136,7 @@ if __name__ == "__main__":
     selected_color_blueish = QColor("#273252")
     disabled_color = QColor("#2a2b2e")
 
+    #applying the color to the app
     dark_theme.setColor(QPalette.ColorRole.Window, dark_background)
     dark_theme.setColor(QPalette.ColorRole.WindowText, text_color)
     dark_theme.setColor(QPalette.ColorRole.Base, dark_background_inputs)
