@@ -106,21 +106,26 @@ my_goal_app/
 
 **Main window with goal examples**
 
+
 <img width="400" height="300" alt="Screenshot 2026-10-06 015402" src="https://github.com/user-attachments/assets/c0cffa73-fbb0-4555-8001-17c95ac1e3b2" />
 
 **Using the search bar to filter goals**
+
 
 <img width="239" height="166" alt="Screenshot 2026-10-06 015051" src="https://github.com/user-attachments/assets/3db1c1de-3744-4a03-8d25-68b2d2d1b052" />
 
 **Create dialog box**
 
+
 <img width="240" height="166" alt="Screenshot 2026-10-06 015143" src="https://github.com/user-attachments/assets/7a66e6c5-4a32-4075-adeb-23e329a01d70" />
 
 **Edit dialog box**
 
+
 <img width="190" height="133" alt="Screenshot 2026-10-06 015214" src="https://github.com/user-attachments/assets/edd0c927-8e4e-4ac3-a00e-e70bb4e24d14" />
 
 **Delete confirmation**
+
 
 ## Testing
 - Create:
