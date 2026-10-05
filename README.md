@@ -140,8 +140,8 @@ my_goal_app/
 ## Known Issues / Limitations
 ### Issues
 No issues as of now.
-### yet to be implement
-tracker
+### Yet to be implement
+- Tracker - tracks user's location and calculates the distance they have done.
 
 ## Author
 Joshua Marc G. Bastillada
