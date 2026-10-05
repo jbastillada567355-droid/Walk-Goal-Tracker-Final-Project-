@@ -100,3 +100,49 @@ my_goal_app/
 - (READ) get_all_goals(): using SELECT title, days, distance FROM goals. Pulls all raw data from storage and parses it into standard Python dictionaries for UI rendering.
 - (UPDATE) update_goal(): using UPDATE goals SET... WHERE title=?. Looks up records via their original string key identifier and updates values in-place.
 - (DELETE) delete_goal(): using DELETE FROM goals WHERE title=?. Permanently drops the selected row matching the specified target title.
+
+## Testing
+- Create:
+  + valid input:
+    * Expected results: accept and save
+    * Actual results: accept and save
+  + invalid input
+    * Expected results: reject and show error message
+    * Actual results: reject and show error message
+- Edit:
+  + valid input
+    * Expected results: accept and save changes
+    * Actual results: accept and save changes
+  + invalid input
+    * Expected results: reject and show error message
+    * Actual results: reject and show error message
+  + press Edit Selected Goal without selecting a goal:
+    * Expected results: show error message
+    * Actual results: show error message
+- Delete:
+  + delete goal Yes confirmation
+    * Expected results: delete goal
+    * Actual results: delete goal
+  + delete goal No confirmation
+    * Expected results: deletion canceled
+    * Actual results: deletion canceled
+  + press delete Selected Goal without selecting a goal:
+    * Expected results: show error message
+    * Actual results: show error message
+- Search:
+  + search for existing goal:
+    * Expected results: show goal
+    * Actual results: show goal
+  + search for nonexistent goal:
+    * Expected results: blank
+    * Actual results: blank
+   
+## Known Issues / Limitations
+### Issues
+No issues as of now.
+### yet to be implement
+tracker
+
+## Author
+Joshua Marc G. Bastillada
+CS26L(35181)
