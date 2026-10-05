@@ -102,8 +102,20 @@ my_goal_app/
 - (DELETE) delete_goal(): using DELETE FROM goals WHERE title=?. Permanently drops the selected row matching the specified target title.
 
 ## Screenshots
-<img width="400" height="300" alt="Screenshot 2026-10-06 015330" src="https://github.com/user-attachments/assets/48d8b8b6-d6e8-4e1c-9f23-d0b15bfd4df1" />
+<img width="800" height="600" alt="Screenshot 2026-10-06 015330" src="https://github.com/user-attachments/assets/48d8b8b6-d6e8-4e1c-9f23-d0b15bfd4df1" />
+main window with goal examples
 
+<img width="797" height="627" alt="Screenshot 2026-10-06 015402" src="https://github.com/user-attachments/assets/c0cffa73-fbb0-4555-8001-17c95ac1e3b2" />
+using the search bar to filter goals
+
+<img width="239" height="166" alt="Screenshot 2026-10-06 015051" src="https://github.com/user-attachments/assets/3db1c1de-3744-4a03-8d25-68b2d2d1b052" />
+create dialog box
+
+<img width="240" height="166" alt="Screenshot 2026-10-06 015143" src="https://github.com/user-attachments/assets/7a66e6c5-4a32-4075-adeb-23e329a01d70" />
+edit dialog box
+
+<img width="190" height="133" alt="Screenshot 2026-10-06 015214" src="https://github.com/user-attachments/assets/edd0c927-8e4e-4ac3-a00e-e70bb4e24d14" />
+delete confirmation
 
 ## Testing
 - Create:
