@@ -1,7 +1,6 @@
 import sys
 
 from PyQt6.QtGui import QPalette, QColor
-from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QHBoxLayout, QPushButton, QTableWidget, QTableWidgetItem,
                              QHeaderView, QMessageBox, QLineEdit)
@@ -146,7 +145,6 @@ if __name__ == "__main__":
     dark_theme.setColor(QPalette.ColorRole.Text, text_color)
     dark_theme.setColor(QPalette.ColorRole.Button, dark_background)
     dark_theme.setColor(QPalette.ColorRole.ButtonText, text_color)
-    dark_theme.setColor(QPalette.ColorRole.BrightText, Qt.GlobalColor.red)
     dark_theme.setColor(QPalette.ColorRole.PlaceholderText, text_color)
     dark_theme.setColor(QPalette.ColorRole.Highlight, selected_color_blueish)
     dark_theme.setColor(QPalette.ColorRole.HighlightedText, text_color)
