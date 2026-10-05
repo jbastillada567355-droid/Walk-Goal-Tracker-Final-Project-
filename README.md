@@ -101,6 +101,10 @@ my_goal_app/
 - (UPDATE) update_goal(): using UPDATE goals SET... WHERE title=?. Looks up records via their original string key identifier and updates values in-place.
 - (DELETE) delete_goal(): using DELETE FROM goals WHERE title=?. Permanently drops the selected row matching the specified target title.
 
+## Screenshots
+<img width="802" height="633" alt="Screenshot 2026-10-06 015330" src="https://github.com/user-attachments/assets/48d8b8b6-d6e8-4e1c-9f23-d0b15bfd4df1" />
+
+
 ## Testing
 - Create:
   + valid input:
