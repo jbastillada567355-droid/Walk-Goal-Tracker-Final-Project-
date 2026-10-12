@@ -29,7 +29,8 @@ When tracking routine fitness tasks, individuals tend to struggle on logging the
 - Theme Styling: PyQt6 Fusion Layout with custom QPalette colors
 
 ## Project Structure
-'''my_goal_app/
+'''text
+my_goal_app/
 ├── main.py
 ├── database/
 │   └── database.py
