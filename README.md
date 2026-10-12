@@ -29,13 +29,14 @@ When tracking routine fitness tasks, individuals tend to struggle on logging the
 - Theme Styling: PyQt6 Fusion Layout with custom QPalette colors
 
 ## Project Structure
-my_goal_app/
+'''my_goal_app/
 ├── main.py
 ├── database/
 │   └── database.py
 └── features/
     ├── create_goal.py
     └── edit_goal.py
+'''
 ### File Descriptions
 - main.py:
     Core entry point. Contains the GoalTracker main window class, handles user actions and events, search filtering loops, and visual dark theme configurations
