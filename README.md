@@ -3,22 +3,27 @@ The Walk Goal Tracker System is a desktop application designed to help users cre
 When tracking routine fitness tasks, individuals tend to struggle on logging their progress or lose momentum due to disorganized note-keeping.
 
 ## Objectives
-- Store goal targets in a database.
-- Provide an easy-to-use interface.
+Store goal targets in a database and to provide an easy-to-use interface.
 
 ## Features
-- Create Goal:
-    Gather valid inputs such as title of goal, expected days, and distance(km) each day.
-- Edit Goal:
-    Modifies existing goal's title, days, and distance(km).
-- Delete Goal:
-    Removes a goal permanently from the database. 
 - Calculate Total Distance:
     Calculates total distance by multiplying days and distance.
 - Goals Table:
     Displays existing goals. Goals can be selected to be edited or deleted.
-- Search and Filter Goals:
-    Filters listed table records based on keystroke matching.
+- Search Goals:
+    Search through listed table records based on keystroke matching.
+- Filter Completed Goals:
+    A feature that allows the user to toggle whether to only show completed goals or all goals.
+- Sort Goals:
+    Lets the user sort the goals by; title, total distance, distance walked, and completion percentage.
+- Log Progress:
+    Lets the user manually input the amount of distance the user has covered to record their progress.
+- Progress Bar:
+    Shows the progress of the user, filling a percentage of the bar based on the user's progress.
+- Check Box:
+    Automatically check and mark a goal if it is completed.
+- Reminder:
+    Reminds the user of the unfinished goals that the user has, or if the users has completed all goals.
 - Dark Theme:
     Gives the application a dark theme.
 
@@ -36,7 +41,9 @@ my_goal_app/
 │   └── database.py
 └── features/
     ├── create_goal.py
-    └── edit_goal.py
+    ├── edit_goal.py
+    ├── progress.py
+    └── reminder.py
 ```
 ### File Descriptions
 - main.py:
@@ -47,6 +54,10 @@ my_goal_app/
     Implements CreateGoal. Dialog box provides the input form and validates the user's input
 - edit_goal.py:
     Implements EditGoal. Reuses form structures to load existing goal information and allows users to edit it
+- progress.py
+    Implements LogProgress. A dialog box allowing users to input and append distance walked to their active goal.
+- reminder.py
+    Implements ReminderDialog. A pop-up dialog displayed on startup of application to show goal progress statuses.
 
 ## Installation and Setup
   ### Required Dependencies
@@ -74,9 +85,12 @@ my_goal_app/
 ## How to Use the System
 1. Launch App: Run "python main.py" in terminal or command prompt to open the main window interface.
 2. Create Goal: Click Create Goal. Provide a title, total days (whole number), and target daily distance (number or decimal value). Click OK to save.
-3. Search/Filter: Type inside the Search Goals... input bar to filter existing records instantly by title.
-4. Edit Goal: Select a row in the data grid and click Edit Selected Goal. Adjust title, days, or distance inside the dialog window and save changes. Click OK to save changes.
-5. Delete Goal: Select a target row, click Delete Selected Goal, and confirm your decision on the popup alert prompt.
+3. Search: Type inside the Search Goals... input bar to only show existing goals which titles matches with the input.
+4. Filter Completed Goals: Click Completed Only to only show the goals that are finished.
+5. Sort: Select how you would like the goals to be sorted using the sort combo box.
+7. Edit Goal: Select a row in the data grid and click Edit Selected Goal. Adjust title, days, or distance inside the dialog window and save changes. Click OK to save changes.
+8. Log Progress: Select a goal row and click Log Progress to input additional distance completed.
+9. Delete Goal: Select a target row, click Delete Selected Goal, and confirm your decision on the popup alert prompt.
 
 ## OOP Implementation
 ### Important Classes & Runtime Objects
@@ -96,36 +110,32 @@ my_goal_app/
 ### Database Structure
   A single-file SQLite database architecture mapped locally to tracker_database.db
 ### Important tables
-  goals: three columns; title, days, distance
+  goals: four columns; title, days, distance, logged_distance
 ### CRUD
 - (CREATE) save_goal(): using INSERT OR IGNORE INTO goals. It commits structural records safely and ignores requests if a duplicate primary key title is entered.
 - (READ) get_all_goals(): using SELECT title, days, distance FROM goals. Pulls all raw data from storage and parses it into standard Python dictionaries for UI rendering.
 - (UPDATE) update_goal(): using UPDATE goals SET... WHERE title=?. Looks up records via their original string key identifier and updates values in-place.
+- (UPDATE) update_progress(): updates logged_distance by adding incremental progress values.
 - (DELETE) delete_goal(): using DELETE FROM goals WHERE title=?. Permanently drops the selected row matching the specified target title.
 
 ## Screenshots
 <img width="400" height="300" alt="Screenshot 2026-10-06 015330" src="https://github.com/user-attachments/assets/48d8b8b6-d6e8-4e1c-9f23-d0b15bfd4df1" />
-
 **Main window with goal examples**
 
 
 <img width="400" height="300" alt="Screenshot 2026-10-06 015402" src="https://github.com/user-attachments/assets/c0cffa73-fbb0-4555-8001-17c95ac1e3b2" />
-
 **Using the search bar to filter goals**
 
 
 <img width="239" height="166" alt="Screenshot 2026-10-06 015051" src="https://github.com/user-attachments/assets/3db1c1de-3744-4a03-8d25-68b2d2d1b052" />
-
 **Create dialog box**
 
 
 <img width="240" height="166" alt="Screenshot 2026-10-06 015143" src="https://github.com/user-attachments/assets/7a66e6c5-4a32-4075-adeb-23e329a01d70" />
-
 **Edit dialog box**
 
 
 <img width="190" height="133" alt="Screenshot 2026-10-06 015214" src="https://github.com/user-attachments/assets/edd0c927-8e4e-4ac3-a00e-e70bb4e24d14" />
-
 **Delete confirmation**
 
 
