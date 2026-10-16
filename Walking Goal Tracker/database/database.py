@@ -4,10 +4,8 @@ class Database:
     def __init__(self, db_name="tracker_database.db"):
         self.db_name = db_name
 
-
     def connect(self):
         return sqlite3.connect(self.db_name)
-
 
     def initialize_database(self):
         connection = self.connect()
@@ -16,35 +14,33 @@ class Database:
             CREATE TABLE IF NOT EXISTS goals (
                 title TEXT NOT NULL PRIMARY KEY,
                 days INTEGER NOT NULL,
-                distance FLOAT NOT NULL
+                distance FLOAT NOT NULL,
+                logged_distance FLOAT DEFAULT 0.0
             )
         """)
         connection.commit()
         cursor.close()
         connection.close()
 
-
     def get_all_goals(self):
         connection = self.connect()
         cursor = connection.cursor()
-        cursor.execute("SELECT title, days, distance FROM goals")
+        cursor.execute("SELECT title, days, distance, logged_distance FROM goals")
         rows = cursor.fetchall()
         cursor.close()
         connection.close()
-        return [{"title": r[0], "days": r[1], "distance": r[2]} for r in rows]
-
+        return [{"title": r[0], "days": r[1], "distance": r[2], "logged_distance": r[3]} for r in rows]
 
     def save_goal(self, title, days, distance):
         connection = self.connect()
         cursor = connection.cursor()
         cursor.execute(
-            "INSERT OR IGNORE INTO goals (title, days, distance) VALUES (?, ?, ?)",
+            "INSERT OR IGNORE INTO goals (title, days, distance, logged_distance) VALUES (?, ?, ?, 0.0)",
             (title, days, distance)
         )
         connection.commit()
         cursor.close()
         connection.close()
-
 
     def update_goal(self, old_title, title, days, distance):
         connection = self.connect()
@@ -57,6 +53,16 @@ class Database:
         cursor.close()
         connection.close()
 
+    def update_progress(self, title, added_distance):
+        connection = self.connect()
+        cursor = connection.cursor()
+        cursor.execute(
+            "UPDATE goals SET logged_distance = logged_distance + ? WHERE title=?",
+            (added_distance, title)
+        )
+        connection.commit()
+        cursor.close()
+        connection.close()
 
     def delete_goal(self, title):
         connection = self.connect()
