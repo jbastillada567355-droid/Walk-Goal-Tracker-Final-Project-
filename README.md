@@ -119,24 +119,49 @@ my_goal_app/
 - (DELETE) delete_goal(): using DELETE FROM goals WHERE title=?. Permanently drops the selected row matching the specified target title.
 
 ## Screenshots
-<img width="400" height="300" alt="Screenshot 2026-10-06 015330" src="https://github.com/user-attachments/assets/48d8b8b6-d6e8-4e1c-9f23-d0b15bfd4df1" />
+<img width="348" height="230" alt="WalkingGoalTracker_Reminder_DialogBox" src="https://github.com/user-attachments/assets/a75a8dc8-f967-49f4-ad91-07d21b98d6f2" />
+
+**Reminder dialog box**
+
+
+<img width="894" height="624" alt="WalkingGoalTracker_Table_Window" src="https://github.com/user-attachments/assets/479a8298-f0a3-4cd4-8f7f-2fdee00d7b3a" />
+
 **Main window with goal examples**
 
 
-<img width="400" height="300" alt="Screenshot 2026-10-06 015402" src="https://github.com/user-attachments/assets/c0cffa73-fbb0-4555-8001-17c95ac1e3b2" />
-**Using the search bar to filter goals**
+<img width="893" height="625" alt="WalkingGoalTracker_Table_UsingSearchBar" src="https://github.com/user-attachments/assets/16ddac6a-5c4a-4a2b-b065-be73c0e33b73" />
+
+**Using the search bar**
 
 
-<img width="239" height="166" alt="Screenshot 2026-10-06 015051" src="https://github.com/user-attachments/assets/3db1c1de-3744-4a03-8d25-68b2d2d1b052" />
+<img width="894" height="625" alt="WalkingGoalTracker_Table_FilterCompleted" src="https://github.com/user-attachments/assets/07b11aa7-402e-4fbe-aa28-859f9d41510f" />
+
+**Using Filter button**
+
+
+<img width="894" height="623" alt="WalkingGoalTracker_Table_UsingSortComboBox" src="https://github.com/user-attachments/assets/a40df696-ed30-4166-a3a3-eba382d8e16a" />
+
+**Using Sort combo box (example: sort by Progress)**
+
+
+<img width="239" height="166" alt="WalkingGoalTracker_Create_DialogBox" src="https://github.com/user-attachments/assets/1731f8bd-7969-4f10-adde-31e8a530bb54" />
+
 **Create dialog box**
 
 
-<img width="240" height="166" alt="Screenshot 2026-10-06 015143" src="https://github.com/user-attachments/assets/7a66e6c5-4a32-4075-adeb-23e329a01d70" />
+<img width="240" height="166" alt="WalkingGoalTracker_Edit_DialogBox" src="https://github.com/user-attachments/assets/8a2a77d4-3402-46a3-a5d3-2b8f2583f1b1" />
+
 **Edit dialog box**
 
 
-<img width="190" height="133" alt="Screenshot 2026-10-06 015214" src="https://github.com/user-attachments/assets/edd0c927-8e4e-4ac3-a00e-e70bb4e24d14" />
+<img width="190" height="133" alt="WalkingGoalTracker_DeleteConfirmation_DialogBox" src="https://github.com/user-attachments/assets/31018fac-1110-498b-b163-bd2aa13a00e9" />
+
 **Delete confirmation**
+
+
+<img width="211" height="101" alt="WalkingGoalTracker_LogProgress_DialogBox" src="https://github.com/user-attachments/assets/4ac90267-d7e1-4b9b-bf11-03ae54cc9002" />
+
+**Log Progress dialog box**
 
 
 ## Testing
